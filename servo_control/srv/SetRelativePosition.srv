@@ -1,0 +1,4 @@
+int64 left_position
+int64 right_position
+---
+int8 result
