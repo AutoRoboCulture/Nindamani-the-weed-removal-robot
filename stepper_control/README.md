@@ -14,7 +14,8 @@ This package is used for controlling the multiple stepper motors with ROS2 inter
   
 2. **scripts/stepper_driver.py**: It decodes the upper level serial command and arrange it in the UART format to send on USB-UART device.
 
-3. **scripts/stepper_ros2_interface.py**: It takes the weed coordinates and move the steppers according to the given location
+3. **scripts/stepper_ros2_interface.py**: It takes the weed coordinates and move the steppers according to the given location.
+   
    **Inputs**: Subscribes to *weedCoordinates* topic and publish data to Atmega2560 controller.
 
 4. **src/deltaKinematics.c**: Its an inverse delta kinematic library for getting the exact theta's for all stepper motor from the input (x,y,z) location
