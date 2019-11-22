@@ -1,11 +1,11 @@
 # RPICAM AI Interface package contains following files
 This package is used for controlling the rpi camera with AI interface
   
-  1.  scripts/rpicam_ai_interface.py
-  1.  scripts/perspectiveImage.py
-  1.  scripts/camera.py
-  3.  CMakeLists.txt
-  4.  package.xml
+  1.  `scripts/rpicam_ai_interface.py`
+  2.  `scripts/perspectiveImage.py`
+  3.  `scripts/camera.py`
+  4.  `CMakeLists.txt`
+  5.  `package.xml`
 
 # Description:
 1. **scripts/rpicam_ai_interface.py**: Open up the rpi camera and load pretrained MASK RCNN model for predicting the weeds and crop. And publish the detected pixel cordinates to ROS2 topic`.
