@@ -1,0 +1,4 @@
+motor:
+        ros__parameters:
+                port: /dev/ttyUSB0
+                rpm: 100
