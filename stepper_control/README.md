@@ -1,18 +1,28 @@
-# rhino_dc_servo
-* This is a ROS package for Rhino DC Servo Motor. Please refer the datasheet of the motor which is included in the package before proceeding further. This package uses serial communication to control the motor. It requires a USB-to-UART converter to interface the motor with a computer.
+# stepper_control package contains following files.
+This package is used for controlling the multiple stepper motors with ROS2 interface
 
-## Procedure:
-* `sudo apt install ros-kinetic-swri-rospy`
-* Set the `port` and `rpm` of the motor in `config/settings.yaml` file.
-* Make sure `roscore` is running.
-* `roslaunch rhino_dc_servo rhino.launch`
-* You should give access to the port before executing roslaunch. For example,
-```
-sudo usermod -a -G dialout $USER
-sudo chmod a+rw /dev/ttyUSB0
-```
-* You can give command to the motor on the following topics, `motor_speed`, `absolute_cmd` and `relative_cmd` with units `rad/s`, `rad` and `rad` respectively.
-* The encoder data is published over the topic `encoderTicks`.
-* The other parameters can be set through ROS Services.
-* If you are using motors for a differential drive robot, you can use the launch file `rhino_differential.launch`.
-* `https://youtu.be/0Q5lQMK9zoE` - a differential drive robot(fitted with Rhino DC Servo motors) doing autonomous navigation inside my home.
+  1.  `config/stepper_settings.yaml`
+  2.  `scripts/stepper_driver.py`
+  3.  `scripts/stepper_ros2_interface.py`
+  4.  `src/deltaKinematics.c`
+  5.  `srv`
+  3.  `CMakeLists.txt`
+  4.  `package.xml`
+
+# Description:
+1. **config/stepper_settings.yaml**: This is ROS2 parameter file. It will be used for setting up the default value at initial. 
+  
+2. **scripts/stepper_driver.py**: It decodes the upper level serial command and arrange it in the UART format to send on USB-UART device.
+
+3. **scripts/stepper_ros2_interface.py**: It takes the weed coordinates and move the steppers according to the given location
+   **Inputs**: Subscribes to *weedCoordinates* topic and publish data to Atmega2560 controller.
+
+4. **src/deltaKinematics.c**: Its an inverse delta kinematic library for getting the exact theta's for all stepper motor from the input (x,y,z) location
+
+5 **srv**: It contains all the services specifically related to stepper motor
+
+3. **CMakeLists.txt**: List down all necessary dependant packages and other directories/files of stepper_control package.
+
+4. **package.xml**: Includes dependent build in this file.
+
+Note: To get better understanding on CMakeLists.txt and package.xml files refer [cmakeliststxt-vs-packagexml](https://answers.ros.org/question/217475/cmakeliststxt-vs-packagexml/?answer=217488#post-id-217488).
