@@ -1,5 +1,5 @@
 # Package Description: 
-  This is a ROS2 package for DC Servo Motor. Please refer the datasheet of the motor which is included in the package before proceeding further. This package uses serial communication to control the motor. It requires a USB-to-UART converter to interface the motor with a computer.
+  This is a ROS2 package for DC Servo Motor. Please refer the [datasheet](https://github.com/AutoRoboCulture/nindamani-the-weed-removal-robot/blob/master/servo_control/RMCS220x_DCServo%2BDriver.pdf) of the motor which is included in the package before proceeding further. This package uses serial communication to control the motor. It requires a USB-to-UART converter to interface the motor with a computer.
 
 # servo_control package contains 6 files.
 
