@@ -63,10 +63,12 @@ In this section we will install all the necessary dependencies in order to be ab
   - For adding additional packages use: `sudo apt install ros-$ROS_DISTRO-<package-name>`
   
 ## 4.Arduino
-  - Download: https://www.arduino.cc/en/guide/linux
+  - Follow this repo to install Arduino on Jetson nano: https://github.com/JetsonHacksNano/installArduinoIDE.git
   - To get Temporary access to USB: `sudo chown <user-name> /dev/tty<usb>` and `sudo chmod a+rw /dev/tty<usb>`
   - To set Permenantly change USB device permission: http://ask.xmodulo.com/change-usb-device-permission-linux.html
   - To control arduino from Command line Source:https://github.com/arduino/arduino-cli
+  - Clone this repo: `https://github.com/AutoRoboCulture/Arduino-Jetson-nano-interface.git`
+  - Place this repo in Arduino Folder
 
 ## 5. OpenCV 3.4.4
   - Refer link: https://www.pyimagesearch.com/2018/05/28/ubuntu-18-04-how-to-install-opencv/
