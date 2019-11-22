@@ -17,7 +17,7 @@ This package is used for controlling the rpi camera with AI interface
    
 3. **scripts/camera.py**: NVIDIA specific camera driver for loading up the camera
 
-4. **CMakeLists.txt**: List down all necessary dependant packages and other directories/files of nindamani_agri_robot package.
+4. **CMakeLists.txt**: List down all necessary dependant packages and other directories/files of rpicam_ai_interface package.
 
 5. **package.xml**: Includes dependent build in this file.
 
