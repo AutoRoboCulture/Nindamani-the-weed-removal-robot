@@ -1,21 +1,24 @@
-# RPICAM AI Interface
-Following codes are used for controlling the rpi camera with AI interface
+# RPICAM AI Interface package contains following files
+This package is used for controlling the rpi camera with AI interface
+  
+  1.  scripts/rpicam_ai_interface.py
+  1.  scripts/perspectiveImage.py
+  1.  scripts/camera.py
+  3.  CMakeLists.txt
+  4.  package.xml
 
-# rpicam_camera_interface file
-Open up the rpi camera and load pretrained MASK RCNN model for predicting the weeds and crop. And publish the detected pixel cordinates to ROS2 topic 
+# Description:
+1. **scripts/rpicam_ai_interface.py**: Open up the rpi camera and load pretrained MASK RCNN model for predicting the weeds and crop. And publish the detected pixel cordinates to ROS2 topic`.
 
-# Main Functions and description:
-1) def initialize_capture_queue()
-- Input: `publish y/n for taking pics or not on topic 'takePicAgain' topic`
-- Output: `None`
-- Description: `It initialize the camera for taking pictures`
+   **Inputs**: Subscribes to *takePicAgain* topic and publish data on *objectcoordinates*.
 
-2) def weedLocation()
-- Input: `take the clicked image as input`
-- Output: `returns the weed location and publish it to the 'ObjectCordinates' topic`
-- Description: `It takes the image and predict the weed from crop, publish the weed location to ROS2 topic`
+2. **scripts/perspectiveImage.py**: It is used for converting the angle viewed image to an bird-eye view image
+   **Inputs**: Takes the input image from rpicam camera
+   
+3. **scripts/camera.py**: NVIDIA specific camera driver for loading up the camera
 
-3) def manualWeedLocation()
-- Input: `take the test location of weeds like for ex: (G100A50B-432C) 100A-> x cord, 50B-> y cord, -432C-> z cord by publishing it to topic 'manualWeedLoc'`
-- Output: `None`
-- Description: `It is for testing the overall mechanism of weed removal robot by providing manual weed coordinates`
+4. **CMakeLists.txt**: List down all necessary dependant packages and other directories/files of nindamani_agri_robot package.
+
+5. **package.xml**: Includes dependent build in this file.
+
+Note: To get better understanding on CMakeLists.txt and package.xml files refer [cmakeliststxt-vs-packagexml](https://answers.ros.org/question/217475/cmakeliststxt-vs-packagexml/?answer=217488#post-id-217488).
