@@ -40,6 +40,13 @@ In this following repository, you will find instructions for software installati
 | Camera | RPi cam ver.2 |
 | Battery | 48V 30ah |
 
+# Packages
+In this section we will install all the necessary dependencies in order to be able to launch nindamani robot:
+  - `nindamani_agri_robot` - integrate all launch node of nindamani robot
+  - `rpicam_ai_interface` - controlling the rpi camera with AI interface
+  - `servo_control` -  controlling the servo motors with ROS2 interface
+  - `stepper_control` - controlling the multiple stepper motors with ROS2 interface
+
 
 # Installation on Jetson Nano Dev Kit
 
@@ -53,7 +60,7 @@ In this following repository, you will find instructions for software installati
 ## 3. ROS2 (Dashing Diademata)
   - Install ROS2 base: https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Install-Debians/
   - Make sure that you have colcon in your machine if you are installing from Debian packages. `sudo apt install python3-colcon-common-extensions`
-  - For adding additional packages use: `sudo apt install ros-$CHOOSE_ROS_DISTRO-<package-name>`
+  - For adding additional packages use: `sudo apt install ros-$ROS_DISTRO-<package-name>`
   
 ## 4.Arduino
   - Download: https://www.arduino.cc/en/guide/linux
@@ -67,7 +74,65 @@ In this following repository, you will find instructions for software installati
 ## 6. Wifi
   - To setup default wifi connection(Intel 8265 NGW card) while bootup Source: https://desertbot.io/blog/how-to-add-a-dual-wifi-bluetooth-card-to-a-jetson-nano-intel-8265
 
+# Create ROS2 Workspace
+  - follow this steps:
+  ```
+    mkdir -p ~/nindamani_ws/src
+    cd ~/ros2_mara_ws
+    colcon build
+    cd src
+    git clone https://github.com/AutoRoboCulture/nindamani-the-weed-removal-robot.git
+  ```
+
+# Clone the Mask R-CNN GitHub Repository:
+  1. Code: `git clone https://github.com/matterport/Mask_RCNN.git`
+  2. Copy this cloned repo to `rpicam_ai_interface` package: `cp Mask_RCNN rpicam_ai_interface/.`
+  3. Run command: 
+      - `cd rpicam_ai_interface/Mask_RCNN`
+      - `sudo python3 install setup.py`
+  4. Confirm the Library Was Installed: `pip3 show mask-rcnn`
+
+
 # Download preTrained Model weights 
-  Link for MASK-RCNN [preTrained model](https://drive.google.com/open?id=1bXEOmOsoBLpXQWVvhhJvhD-RjvCLxOAQ)
+  - Link for MASK-RCNN [preTrained model](https://drive.google.com/open?id=1bXEOmOsoBLpXQWVvhhJvhD-RjvCLxOAQ)
+  - Copy preTrained weights to `rpicam_ai_interface` package: 
+      ```
+      mkdir rpicam_ai_interface/preTrained_weights
+      cp mask_rcnn_trained_weed_model.h5 rpicam_ai_interface/preTrained_weights/.
+      ```
 
-
+# Follow Folder Structure:
+  ```
+  nindamani_ws
+├── build
+├── install
+├── log
+└── src
+    ├── nindamani_agri_robot
+    │   ├── launch
+    │   └── scripts
+    ├── rpicam_ai_interface
+    │   ├── scripts
+    │   ├── preTrained_weights
+    │   └── Mask-RCNN
+    ├── servo_control
+    │   ├── config
+    │   ├── scripts
+    │   └── srv
+    └── stepper_control
+        ├── config
+        ├── scripts
+        ├── src
+        └── srv
+  ```
+  
+# Compile nindamani_ws
+  - Follow steps:
+    ```
+    cd nindamani_ws
+    colcon build
+    ```
+  
+ # Launch nindamani robot
+  - Make sure source *setup.bash* in *bashrc* before ROS2 launch command: `echo "source /home/<user-name>/nindamani_ws/install/setup.bash" >> ~/.bashrc`
+  - ROS2 Launch command: `ros2 launch nindamani_agri_robot nindamani_agri_robot.launch.py`
