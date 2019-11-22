@@ -53,7 +53,7 @@ In this following repository, you will find instructions for software installati
 ## 3. ROS2 (Dashing Diademata)
   - Install ROS2 base: https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Install-Debians/
   - Make sure that you have colcon in your machine if you are installing from Debian packages. `sudo apt install python3-colcon-common-extensions`
-  - For adding addition packages use: `sudo apt install ros-$CHOOSE_ROS_DISTRO-<package-name>`
+  - For adding additional packages use: `sudo apt install ros-$CHOOSE_ROS_DISTRO-<package-name>`
   
 ## 4.Arduino
   - Download: https://www.arduino.cc/en/guide/linux
