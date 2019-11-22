@@ -14,3 +14,8 @@ Open up the rpi camera and load pretrained MASK RCNN model for predicting the we
 - Input: `take the clicked image as input`
 - Output: `returns the weed location and publish it to the 'ObjectCordinates' topic`
 - Description: `It takes the image and predict the weed from crop, publish the weed location to ROS2 topic`
+
+3) def manualWeedLocation()
+- Input: `take the test location of weeds like for ex: (G100A50B-432C) 100A-> x cord, 50B-> y cord, -432C-> z cord by publishing it to topic 'manualWeedLoc'`
+- Output: `None`
+- Description: `It is for testing the overall mechanism of weed removal robot by providing manual weed coordinates`
