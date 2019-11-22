@@ -67,3 +67,7 @@ In this following repository, you will find instructions for software installati
 ## 6. Wifi
   - To setup default wifi connection(Intel 8265 NGW card) while bootup Source: https://desertbot.io/blog/how-to-add-a-dual-wifi-bluetooth-card-to-a-jetson-nano-intel-8265
 
+# Download preTrained Model weights 
+  Link for MASK-RCNN [preTrained model](https://drive.google.com/open?id=1bXEOmOsoBLpXQWVvhhJvhD-RjvCLxOAQ)
+
+
