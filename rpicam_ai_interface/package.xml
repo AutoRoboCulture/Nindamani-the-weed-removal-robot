@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd"
+            schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<package format="3">
+  <name>rpicam_ai_interface</name>
+  <version>0.1.0</version>
+  <description>ROS2 node for Raspberry Pi camera and AI interface</description>
+  <license>MIT</license>
+
+  <author email="autoroboculture@gmail.com">autoroboculture</author>
+  <maintainer email="autoroboculture@gmail.com">autoroboculture</maintainer>
+  <url type="repository">https://autoroboculture.github.io/nindamani-the-weed-removal-robot/</url>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <build_depend>rosidl_default_generators</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+
+  <depend>builtin_interfaces</depend>
+  <exec_depend>rosidl_default_generators</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
