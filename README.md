@@ -138,3 +138,16 @@ In this section we will install all the necessary dependencies in order to be ab
  # Launch nindamani robot
   - Make sure source *setup.bash* in *bashrc* before ROS2 launch command: `echo "source /home/<user-name>/nindamani_ws/install/setup.bash" >> ~/.bashrc`
   - ROS2 Launch command: `ros2 launch nindamani_agri_robot nindamani_agri_robot.launch.py`
+  
+  
+ # Reference 
+```
+ @misc{matterport_maskrcnn_2017,
+  title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
+  author={Waleed Abdulla},
+  year={2017},
+  publisher={Github},
+  journal={GitHub repository},
+  howpublished={\url{https://github.com/matterport/Mask_RCNN}},
+}
+```
