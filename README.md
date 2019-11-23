@@ -155,4 +155,7 @@ In this section we will install all the necessary dependencies in order to be ab
 
 # Comments in each code function (TODO)
 
-
+# Developers and Contact Detail
+> 1. Kevin Patel
+> 2. Nihar Chaniyara
+> Email: autoroboculture@gmail.com
