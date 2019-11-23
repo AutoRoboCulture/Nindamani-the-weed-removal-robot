@@ -151,3 +151,8 @@ In this section we will install all the necessary dependencies in order to be ab
   howpublished={\url{https://github.com/matterport/Mask_RCNN}},
 }
 ```
+# Potential Improvement (TODO)
+
+# Comments in each code function (TODO)
+
+
