@@ -32,6 +32,9 @@ class Stepper:
         self.initUI()
 
     def initUI(self):
+        #input: None 
+        #output: None
+        #Description: Used for initializing default values for usb port, creating node, publishers & subscriber and checking whether serial port is available ot not
 
         rclpy.init(args=None)
         self.node2 = rclpy.create_node('stepperMotor', automatically_declare_parameters_from_overrides=True)
@@ -78,6 +81,9 @@ class Stepper:
 
     
     def testMotorControl(self,msg):
+        #input: Getting input from 'testObjectcoordinates' topic
+        #output: None
+        #Description: Used for testing stepper motor by giving (x,y,z) position like (G-30A20B-450C)
        
         #Decoding the message of format "G<x>A<y>B<z>C"
         cordData = msg.data
@@ -125,6 +131,9 @@ class Stepper:
             self.node2.get_logger().info('Value Out of Range!!')
 
     def MotorControlFeedback(self,msg):
+        #input: Getting input from 'weedCoordinates' topic
+        #output: None
+        #Description: Take the weed coordinates and calculate the steps/degree for each stepper motor and send it to arduino 
         
         #Decoding the message of format "G<x>A<y>B<z>C"
         cordData = msg.data
@@ -199,6 +208,10 @@ class Stepper:
       
     #Controlling the Individual Stepper Motor
     def setAbsoluteMotor1(self, msg):
+        #input: Getting input from 'stepperMotor1_absolute_cmd' topic
+        #output: None
+        #Description: Used for testing individual stepper motor by giving (x,y,z) position like (G-30A0B0C)
+        
         position1 = msg.data
         if(position1 <=0 and position1>=-128):
             position1 = msg.data * (self.motorMicrostep/360)
@@ -207,6 +220,10 @@ class Stepper:
             self.node2.get_logger().info('Value Out of Range!!')
 
     def setAbsoluteMotor2(self, msg):
+        #input: Getting input from 'stepperMotor2_absolute_cmd' topic
+        #output: None
+        #Description: Used for testing individual stepper motor by giving (x,y,z) position like (G0A20B0C)
+        
         position2 = msg.data
         if(position2 <=0 and position2>=-128):
             position2 = msg.data * (self.motorMicrostep/360)
@@ -215,6 +232,10 @@ class Stepper:
             self.node2.get_logger().info('Value Out of Range!!')
 
     def setAbsoluteMotor3(self, msg):
+        #input: Getting input from 'stepperMotor2_absolute_cmd' topic
+        #output: None
+        #Description: Used for testing individual stepper motor by giving (x,y,z) position like (G0A0B40C)
+        
         position3 = msg.data
         if(position3 <=0 and position3>=-128):
             position3 = msg.data * (self.motorMicrostep/360)
