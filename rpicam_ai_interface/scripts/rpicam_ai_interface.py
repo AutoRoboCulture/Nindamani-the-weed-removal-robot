@@ -28,8 +28,7 @@ import pdb
 from matplotlib import pyplot
 
 #Input Output Files path
-#PRETRAINED_WEIGHT_PATH = '/home/arc/nindamani_ws/src/rpicam_ai_interface/Mask_RCNN/weights/mask_rcnn_trained_weed_model.h5'
-PRETRAINED_WEIGHT_PATH = 'src/rpicam_ai_interface/Mask_RCNN/weights/mask_rcnn_trained_weed_model.h5'
+PRETRAINED_WEIGHT_PATH = 'src/rpicam_ai_interface/preTrained_weights/mask_rcnn_trained_weed_model.h5'
 OUTPUT_IMAGE_PATH = '/src/rpicam_ai_interface/pointedWeedImg.jpg'
 INPUT_TEST_IMAGE_PATH = '/src/rpicam_ai_interface/testImage.jpg'
 
