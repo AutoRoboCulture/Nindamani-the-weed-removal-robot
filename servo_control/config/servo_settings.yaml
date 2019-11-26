@@ -1,3 +1,4 @@
+# USB port address for communication with device and default set rpm of motor
 motor:
         ros__parameters:
                 port: /dev/ttyUSB1
