@@ -1,10 +1,12 @@
 import numpy as np
 import cv2 as cv
 
-#Getting input/raw image from rpicam_ai_interface.py 
-def perspective(rawImg):
 
-    #input image storage path
+def perspective(rawImg):
+    #input: Getting input/raw image from rpicam_ai_interface.py 
+    #output: Returns the perspected image taken from camera
+    #Description: Used for converting the angle viewed image into bird eye view image
+    
     input_img = "src/rpicam_ai_interface/inputImg.jpg"
     
     #Perspected image storage path
