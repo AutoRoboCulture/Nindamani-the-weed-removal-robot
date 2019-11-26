@@ -248,7 +248,7 @@ class Rpicam_ai_node:
     def take_pictures_test(self):
         #input: None
         #output: None
-        #Description: Used for validating AI is working with camera or not
+        #Description: Used for validating, AI is working with camera or not
         
         #Getting the bird eye view of the image 
         #persImg = perspective(cv_image)
