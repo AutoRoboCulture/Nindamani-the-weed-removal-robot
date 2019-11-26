@@ -25,6 +25,11 @@ class Servo:
         super().__init__()
 
         self.initUI()
+    
+    #Input: None 
+    #Output: None
+    #Description: create nodes for servo motor, create a ros publisher topic and three ros topic subscriber, 
+    # setup services for taking control over servo motor
     def initUI(self):
 
         rclpy.init(args=None)
@@ -87,7 +92,7 @@ class Servo:
         result = self.myMotor.setAbsolutePostion(position)
     
     def openGripper(self, request, response):
-        response.success = self.myMotor.setAbsolutePostion(3000) #opening of jaw
+        response.success = self.myMotor.setAbsolutePostion(3000) #opening of jaw #Motor Full rotation value is 1800
         return response
     
     def closeGripper(self,request, response):
