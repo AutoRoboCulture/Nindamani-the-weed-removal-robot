@@ -36,6 +36,10 @@ struct re_val_InvKin {
  
  
  struct re_val_forKin delta_calcForward(float theta1, float theta2, float theta3) {
+	 
+    //input: Getting input theta1,theta2 and theta3
+    //output: Returns the (x,y,z) location of object
+    //Description: Used for calcuating the delta forward kinematics
 
           
      float x0,y0,z0;
@@ -103,6 +107,10 @@ int delta_calcAngleYZ(float x0, float y0, float z0, float* theta) {
  // inverse kinematics: (x0, y0, z0) -> (theta1, theta2, theta3)
  // returned status: 0=OK, -1=non-existing position
 struct re_val_InvKin delta_calcInverse(float x0, float y0, float z0) {
+    //input: Getting input (x,y,z)
+    //output: Returns the (theta1,theta2,theta3) for each stepper motor 
+    //Description: Used for calcuating the delta inverse kinematics
+
      float t1 ,t2 ,t3 = 0;
      float t = (f-e)*tan30/2;
      float dtr = pi/(float)180.0;
