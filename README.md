@@ -145,8 +145,17 @@ In this section we will install all the necessary dependencies in order to be ab
   - Make sure source *setup.bash* in *bashrc* before ROS2 launch command: `echo "source /home/<user-name>/nindamani_ws/install/setup.bash" >> ~/.bashrc`
   - ROS2 Launch command: `ros2 launch nindamani_agri_robot nindamani_agri_robot.launch.py`
  
-  
- # Reference 
+# Potential Improvements
+
+We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video link** but can be improved. Here are some of our ideas which can improvise this robot in future:
+
+- Gripper design enchancement with end tip as arrow shaped.
+- Delta arm reach can be improved with high torque stepper motor. 
+- With RTK-GPS and 4 wheeled drive + 4 wheel steering implementation on robot, it will make whole robot working autonomously.
+- Need 3D mapping of land using Lidar, for finding variations in height of crops, weeds and ridge.
+
+# Reference 
+1. [Mask R-CNN for Object Detection and Segmentation](https://github.com/matterport/Mask_RCNN/)
 ```
  @misc{matterport_maskrcnn_2017,
   title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
@@ -157,14 +166,9 @@ In this section we will install all the necessary dependencies in order to be ab
   howpublished={\url{https://github.com/matterport/Mask_RCNN}},
 }
 ```
-# Potential Improvements
+2. [Train Mask-RCNN model on Custom Dataset for Multiple Objects](https://github.com/AutoRoboCulture/mask-rcnn-for-multiple-objects.git)
 
-We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video link** but can be improved. Here are some of our ideas which can improvise this robot in future:
-
-- Gripper design enchancement with end tip as arrow shaped.
-- Delta arm reach can be improved with high torque stepper motor. 
-- With RTK-GPS and 4 wheeled drive + 4 wheel steering implementation on robot, it will make whole robot working autonomously.
-- Need 3D mapping of land using Lidar, for finding variations in height of crops, weeds and ridge.
+3. [Delta Robot Simulation on Gazebo using MARA-Env](https://github.com/AutoRoboCulture/delta-robot-simulation-gazebo.git)
 
 
 # Developer's Contact Detail
