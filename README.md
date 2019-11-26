@@ -137,11 +137,14 @@ In this section we will install all the necessary dependencies in order to be ab
     cd nindamani_ws
     colcon build
     ```
-  
+ # Dependency
+ 
+ [Stepper Motor library implementation on Arduino](https://github.com/AutoRoboCulture/Arduino-Jetson-nano-stepper-motor-interface.git)
+ 
  # Launch nindamani robot
   - Make sure source *setup.bash* in *bashrc* before ROS2 launch command: `echo "source /home/<user-name>/nindamani_ws/install/setup.bash" >> ~/.bashrc`
   - ROS2 Launch command: `ros2 launch nindamani_agri_robot nindamani_agri_robot.launch.py`
-  
+ 
   
  # Reference 
 ```
@@ -156,13 +159,15 @@ In this section we will install all the necessary dependencies in order to be ab
 ```
 # Potential Improvements
 
-We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video** but can be solved. Here some our ideas which can improvise this robot in future:
+We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video link** but can be improved. Here are some of our ideas which can improvise this robot in future:
 
-- Gripper design enchancement with more sharp at front and less gap in between them for picking up the weed.
-- With RTK-GPS and 4 wheeled drive + 4 wheel steering in robot, it will make whole robot working autonomously.
-- Need 3d mapping of land by Lidar can be used for finding variations in height of crops & weeds
+- Gripper design enchancement with end tip as arrow shaped.
+- Delta arm reach can be improved with high torque stepper motor. 
+- With RTK-GPS and 4 wheeled drive + 4 wheel steering implementation on robot, it will make whole robot working autonomously.
+- Need 3D mapping of land using Lidar, for finding variations in height of crops, weeds and ridge.
 
-# Developers and Contact Detail
+
+# Developer's Contact Detail
 ```
 Kevin Patel
 Nihar Chaniyara
