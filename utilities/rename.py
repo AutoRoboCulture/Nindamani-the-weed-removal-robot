@@ -23,7 +23,7 @@ def renameImg():
     nonRidgeOutput_path = '../dataset/newComer/nonRidge/'
     lineDrawnOutput_path = '../dataset/newComer/lineDrawn/'
     
-    #TrainX and Y path for getting last saved number
+    #TrainX and TrainY path for getting last saved number
     ridgeTrainXY_path = '../dataset/trainX/ridge/'     #To get last image image_#number in Dataset
     pathtR, dirstR, filestR = next(os.walk(ridgeTrainXY_path))
     file_counttR = len(filestR)
@@ -54,7 +54,7 @@ def renameImg():
     def nC(input_path, output_path, file_cnt, file_name):
         
         img_num = file_cnt
-        #img_num = 0
+        #img_num = 0 #If you want to start from desired number
 
         #File Count
         imgExt = file_name.split(".")[1]
@@ -120,7 +120,6 @@ def renameImg():
 
 #<---------------------------------Use: For renaming dataAugment Image-------------------------->#
 def renameDAImg():
-    #pdb.set_trace()
     
     #``````````````````````````````````Input path```````````````````````````````````````#
 
@@ -254,18 +253,14 @@ def renameDAImg():
 def renameFresh(imgExt):
         
     #``````````````````````````````````````Input path``````````````````````````````````````#
-    #ridgeInput_path = '../dataset/fresh/*.'+imgExt
-    #ridgeInput_path = '../dataset/testDataset/*.'+imgExt
-    #ridgeInput_path = '../dataset/augmented/*.'+imgExt
-    #nonRidgeInput_path = '../dataset/boundingBox/*.'+imgExt
-    ridgeInput_path = '/home/kevin/Desktop/outputImg/*.'+imgExt
+    ridgeInput_path = '<input image path>/*.'+imgExt
 
     #``````````````````````````````````````Save Location``````````````````````````````````````#
     #ridgeOutput_path = '../dataset/renamedWeed/'
     #ridgeOutput_path = '../dataset/testDataset/renamed/'
     #ridgeOutput_path = '../dataset/renamedAugmented/'
     #nonRidgeOutput_path = '../dataset/newComer/nonRidge/'
-    ridgeOutput_path = '/home/kevin/Desktop/outputImg/renamed/'
+    ridgeOutput_path = '<output image save path>'
     
     #`````````````````````````TrainX and Y path for getting last saved number```````````````````#
     
@@ -296,7 +291,7 @@ def renameFresh(imgExt):
     #``````````````````````````````````Name Change Function````````````````````````````````````````#
     def nC(input_path, output_path, file_cnt, file_name):
         
-        img_num = 1     #file number initial
+        img_num = 1     #I fyou want to start from desired number
 
         #File Count
         name = input_path.replace('*.'+imgExt,'')
@@ -357,4 +352,4 @@ def renameFresh(imgExt):
 #Function Calling
 #renameDAImg()
 #renameFresh('jpg')
-renameFresh('png')
+renameFresh('png') #pass image extension as argument 
