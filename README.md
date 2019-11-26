@@ -18,7 +18,7 @@ In this following repository, you will find instructions for software installati
 | ------------- | ------------- |
 | Robotics OS | ROS2.0 Dashing Diademata |
 | System | Ubuntu 18.04 LTS |
-| Communication | Intel 8265 Wifi card |
+| Communication | Wireless , UART(internal motor control)  |
 | AI Framework | Keras |
 | Programming Language | Python3 & C |
 
@@ -36,8 +36,11 @@ In this following repository, you will find instructions for software installati
 | Arm Reach | 200x200 sq mm |
 | Processor board | Jetson nano Dev Kit |
 | Microcontroller | Arduino Mega |
-| Motors | Servo and Steppers |
+| Servo Motor | 12V DC, 200RPM, 32kgcm H.Torque |
+| Stepper Motor |  48V, 6A, Nema 34, 87 kgcm H.Torque|
 | Camera | RPi cam ver.2 |
+| Wifi card | Intel 8265 |
+| USB-TTL cable |  PL2303HX chip |
 | Battery | 48V 30ah |
 
 # Packages
@@ -62,7 +65,7 @@ In this section we will install all the necessary dependencies in order to be ab
   - Make sure that you have colcon in your machine if you are installing from Debian packages. `sudo apt install python3-colcon-common-extensions`
   - For adding additional packages use: `sudo apt install ros-$ROS_DISTRO-<package-name>`
   
-## 4.Arduino
+## 4. Arduino
   - Follow this repo to install Arduino on Jetson nano: https://github.com/JetsonHacksNano/installArduinoIDE.git
   - To get Temporary access to USB: `sudo chown <user-name> /dev/tty<usb>` and `sudo chmod a+rw /dev/tty<usb>`
   - To set Permenantly change USB device permission: http://ask.xmodulo.com/change-usb-device-permission-linux.html
