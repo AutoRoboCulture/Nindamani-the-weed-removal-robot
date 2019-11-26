@@ -12,15 +12,10 @@ from PIL import Image
 
 def cropFunc(crop_height_top, crop_width):
     #Count Number of Images     
-    input_path = '/home/kevin/work/weedRemoval/dataset/fresh/qw/*.jpg'
-    #output_path = "../dataset/newComer/ridge/"
+    input_path = '<input image path>/*.jpg'
     
     #```Temp Output Path```#
-    output_path = "/home/kevin/work/weedRemoval/dataset/fresh/qw/q"
-    
-    #pdb.set_trace()
-    #crop_height_top = 20 #Crop from top side, *!Enter Value in percentage!*
-
+    output_path = "<output image save path>"
 
     name = input_path.replace('*.jpg','')
     path, dirs, files = next(os.walk(name))
@@ -38,8 +33,6 @@ def cropFunc(crop_height_top, crop_width):
             filename = output_path%img_name        #output images directory path
             h,w,c = read.shape
             h1 = int(h - (crp_h*h)) #% height, from bottom side
-            #w2 = int(w/2 + ((crp*h)/2)) # leave right )side
-            #w1 = int(w/2 - ((crp*h)/2)) #leave left side
             w2 = int(w - (crp_w*w)) # leave right )side
             w1 = int(crp_w*w) #leave left side
             crop_img = read[h1:h,w1:w2]
@@ -49,4 +42,6 @@ def cropFunc(crop_height_top, crop_width):
     print (cnt,' Images Cropped\n')
 
 #Function Calling
-cropFunc(0,30)
+#(height,width) values in percentage, 
+#Note: example. (0,30) means crop 30% from right side and 30% from left side
+cropFunc(0,30)  
