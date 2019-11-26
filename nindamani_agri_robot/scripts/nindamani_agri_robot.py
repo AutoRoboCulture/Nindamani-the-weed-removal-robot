@@ -18,7 +18,11 @@ class Nindamani:
         super().__init__()
         self.res = False
         self.initUI()
-
+    
+    #Input: None 
+    #Output: None
+    #Description: creating node for this package, publish and subscribe to ros topic,
+    # two servo motor services to open and close respectively
     def initUI(self):
         rclpy.init(args=None)
 
@@ -37,6 +41,10 @@ class Nindamani:
 
         rclpy.spin(self.node1)
 
+    #Input: Weed coordinates by subsribe to ros topic
+    #Output: None
+    #Description: takes weed coordinates from ros topic, extract position of weed and then publishes over topic,
+    # activate sevices of servo motor, perform full cycle of weed pick and place action (includes weed fix place/basket location)
     def autoPickNplace(self,msg):
         if (msg.data != None):
             
