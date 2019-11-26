@@ -15,6 +15,9 @@ class ServoMotor:
     def __init__(self, serial_port_):
         ServoMotor.__port = serial_port_
 
+    #Input: None 
+    #Output: None
+    #Description: check serial communication
     def openSerialPort(self):
         ServoMotor.__ser.port = ServoMotor.__port
         try:
@@ -234,7 +237,9 @@ class ServoMotor:
             res = False
             pass
         return res
-
+    #Input: None 
+    #Output: None
+    #Description: on the start, code will send 'P0' by default to set motor initial position
     def isAvailable(self):
         ServoMotor.__ser.reset_input_buffer()
         ServoMotor.__ser.write(('P0\r').encode())
