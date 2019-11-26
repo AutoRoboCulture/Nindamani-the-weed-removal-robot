@@ -7,7 +7,7 @@ from rclpy.impl.rcutils_logger import RcutilsLogger as log
 from rclpy.logging import get_logger
 from rclpy.logging import LoggingSeverity
 
-MICROSTEP = 6400
+MICROSTEP = 6400 #Set it to 6400 on stepper motor 6A driver using 7 small white switches
 
 #A - Read/Write for Stepper Acceleration
 #S - Read/Write for Stepper Speed
@@ -71,6 +71,10 @@ class StepperMotor:
         StepperMotor.__ser.write(('S'+str(int(speed))+ '\r').encode())
         StepperMotor.__ser.reset_input_buffer()
 
+    #Input: take position/#steps values of motor 
+    #Output: None
+    #Description: organize pos values in G<x>A<y>B<z>C string format, send it to arduino,
+    #arduino then decode pos values and control motor accordingly
     def setAbsolutePosition(self, position1, position2, position3):
         try:
             rclpy.logging._root_logger.debug('G'+(str(position1)+'A')+(str(position2)+'B')+(str(position3)+'C'))
@@ -82,7 +86,10 @@ class StepperMotor:
     
     def getMotorMicrostep(self):
         return MICROSTEP
-
+    
+    #Input: None 
+    #Output: acknowledgement in boolean of sent msg
+    #Description: send 'X' to arduino for calibration and set default value of motor i.e. speed and accel.
     def autoCalibrate(self):
         try:
             StepperMotor.__ser.write(('X\r').encode())
@@ -92,6 +99,9 @@ class StepperMotor:
             pass
         return res
 
+    #Input: None 
+    #Output: acknowledgement in boolean of sent msg
+    #Description: send 'X' to arduino for calibration and arduino set default value of motor i.e. speed and acceleration.
     def isAvailable(self):
         StepperMotor.__ser.reset_input_buffer()
         StepperMotor.__ser.write(('X').encode())
