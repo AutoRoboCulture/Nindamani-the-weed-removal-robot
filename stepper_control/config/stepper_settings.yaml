@@ -1,3 +1,4 @@
+#write communication port to control motor and default rpm
 motor:
         ros__parameters:
                 port: /dev/ttyUSB0
