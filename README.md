@@ -156,8 +156,8 @@ In this section we will install all the necessary dependencies in order to be ab
 We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video** but can be solved. Here some our ideas which can improvise this robot in future:
 
 - Gripper design enchancement with more sharp at front and less gap in between them for picking up the weed.
-- With RTK-GPS and 4 wheeled drive + 4 wheel steering  
-- 3d mapping of land can be used for variations in height
+- With RTK-GPS and 4 wheeled drive + 4 wheel steering in robot, it will make whole robot working autonomously.
+- Need 3d mapping of land by Lidar can be used for finding variations in height of crops & weeds
 
 # Developers and Contact Detail
 ```
