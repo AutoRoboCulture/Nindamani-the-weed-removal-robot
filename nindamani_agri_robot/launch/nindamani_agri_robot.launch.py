@@ -9,6 +9,10 @@ from launch import LaunchService
 from launch.actions.execute_process import ExecuteProcess
 from launch_ros.actions import Node
 
+
+#Input: None 
+#Output: None
+#Description: Launch nodes of different package and other parameter files, includes Four pakages
 def generate_launch_description():
     
     ld = LaunchDescription([
