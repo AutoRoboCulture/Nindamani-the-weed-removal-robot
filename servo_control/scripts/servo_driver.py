@@ -237,6 +237,7 @@ class ServoMotor:
             res = False
             pass
         return res
+    
     #Input: None 
     #Output: None
     #Description: on the start, code will send 'P0' by default to set motor initial position
