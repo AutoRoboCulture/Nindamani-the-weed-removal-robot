@@ -1,4 +1,4 @@
-# Nindamani-the-weed-removal-robot
+# Nindamani the weed removal robot
 
 Nindamani, the AI based mechanically weed removal robot, which autonomously detects and segment the weeds from crop using artificial intelligence. The whole robot modules natively build on ROS2. Nindamani can be used in any early stage of crops for autonomous weeding.
 
