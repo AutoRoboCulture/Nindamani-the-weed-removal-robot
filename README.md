@@ -154,7 +154,7 @@ We have presented the concept that how weeds can be detected from crops using Ar
 - With RTK-GPS and 4 wheeled drive + 4 wheel steering implementation on robot, it will make whole robot working autonomously.
 - Need 3D mapping of land using Lidar, for finding variations in height of crops, weeds and ridge.
 
-# Reference 
+# References
 1. [Mask R-CNN for Object Detection and Segmentation](https://github.com/matterport/Mask_RCNN/)
 ```
  @misc{matterport_maskrcnn_2017,
