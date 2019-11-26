@@ -45,6 +45,11 @@ class PredictionConfig(Config):
 class Rpicam_ai_node:
 
     def __init__(self):
+        
+        #input: None
+        #output: None
+        #Description: Used for initializing all default values for hardware
+        
         super().__init__()
         rclpy.init(args=None)
         self.node = rclpy.create_node('rpicam_ai_node', allow_undeclared_parameters=True)
@@ -95,6 +100,10 @@ class Rpicam_ai_node:
         self.manualSub = self.node.create_subscription(String,'manualWeedLoc', self.manualWeedLocation,10)
 
     def pictureCallback(self,msg):
+        #input: Take data published by 'takePicAgain' topic
+        #output: None
+        #Description: Used for controlling when to take pic from camera
+        
         self.inp = msg.data
         self.initialize_capture_queue()
     
@@ -132,6 +141,9 @@ class Rpicam_ai_node:
             self.stop()
     
     def weedLocation(self,image):
+        #input: Take a input image provided by takePictures() function
+        #output: Returns the number of weeds and its location
+        #Description: Used to convert the detected pixel location of weeds into real distance by some measurement factor
         
         HEIGHT  =  -500.0   #Physically need to decide the ground height
 
@@ -186,6 +198,9 @@ class Rpicam_ai_node:
         return weedCount,weedLoc
 
     def manualWeedLocation(self,msg):
+        #input: Take a input weed data location in form of G100A-20B-430C->(x,y,z) provided by 'manualWeedLoc' topic
+        #output: None
+        #Description: Used for testing purpose by providing location, the delta arm goes to that location or not
         
         cordData = msg.data
         cordA = cordData.find("A")
@@ -231,6 +246,10 @@ class Rpicam_ai_node:
 
 
     def take_pictures_test(self):
+        #input: None
+        #output: None
+        #Description: Used for validating AI is working with camera or not
+        
         #Getting the bird eye view of the image 
         #persImg = perspective(cv_image)
         persImg = skimage.io.imread(INPUT_TEST_IMAGE_PATH)
@@ -260,7 +279,9 @@ class Rpicam_ai_node:
         self.publisher.publish(msg)
 
     def take_pictures(self):
-
+        #input: None
+        #output: None
+        #Description: Used for capturing a single frame from camera
         if self.cap.isOpened():
             cnt =0 
 
