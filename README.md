@@ -149,10 +149,7 @@ In this section we will install all the necessary dependencies in order to be ab
 
 # Demo video | Proof of Concept
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=FSINkXF2yuU
-" target="_blank"><img src="http://img.youtube.com/vi/FSINkXF2yuU/0.jpg" 
-alt="Demo Video" width="1080" height="720" border="10" /></a>
-
+[![IMAGE ALT TEXT HERE](demo/video_link_github.png)](https://www.youtube.com/watch?v=FSINkXF2yuU)
 
 # Potential Improvements
 
