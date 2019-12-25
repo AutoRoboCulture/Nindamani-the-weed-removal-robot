@@ -146,7 +146,14 @@ In this section we will install all the necessary dependencies in order to be ab
  # Launch nindamani robot
   - Make sure source *setup.bash* in *bashrc* before ROS2 launch command: `echo "source /home/<user-name>/nindamani_ws/install/setup.bash" >> ~/.bashrc`
   - ROS2 Launch command: `ros2 launch nindamani_agri_robot nindamani_agri_robot.launch.py`
- 
+
+# Demo video | Proof of Concept
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=FSINkXF2yuU
+" target="_blank"><img src="http://img.youtube.com/vi/FSINkXF2yuU/0.jpg" 
+alt="Demo Video" width="1080" height="720" border="10" /></a>
+
+
 # Potential Improvements
 
 We have presented the concept that how weeds can be detected from crops using Artifical Intelligence and through delta arm robot weeds are removed autonomously. It's not perfect of course as you can see in the **video link** but can be improved. Here are some of our ideas which can improvise this robot in future:
