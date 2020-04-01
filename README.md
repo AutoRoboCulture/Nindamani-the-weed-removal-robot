@@ -149,7 +149,7 @@ In this section we will install all the necessary dependencies in order to be ab
 
 # Demo video | Proof of Concept
 
-[![IMAGE ALT TEXT HERE](demo/video_link_github.png)](https://www.youtube.com/watch?v=FSINkXF2yuU)
+[![IMAGE ALT TEXT HERE](demo/video_link_github.png)](https://www.youtube.com/watch?v=dN5NNDlvku0)
 
 # Potential Improvements
 
