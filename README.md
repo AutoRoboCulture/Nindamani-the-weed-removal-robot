@@ -1,5 +1,19 @@
 # Nindamani the weed removal robot
 
+# Award🏅
+
+### Our project "Nindamani: The Weed Removal AgriRobot" won 1st prize🏅 in Autonomous Machines & Robotics category at NVIDIA's AI at the Edge challenge.
+
+### Check out the articles on [NVIDIA's blog](https://blogs.nvidia.com/blog/2020/04/10/robotics-duo-digs-into-the-weeds-with-winning-ai-project-at-hackster-io/),  [hackster.io](https://www.hackster.io/autoroboculture/nindamani-the-weed-removal-robot-36f7c0) page, and New Scientist's [news letter](https://www.newscientist.com/article/2241741-robot-with-pincers-can-detect-and-remove-weeds-without-harming-crops/)
+
+
+![NVIDIA challenge winner](https://github.com/AutoRoboCulture/Nindamani-the-weed-removal-robot/blob/master/demo/NVIDIA%20AI%20at%20The%20Edge%20Challenge%20Winner-converted.png)
+
+
+### Note: Please do mention our title if you find this project helpful
+
+## Project Details
+
 Nindamani, the AI based mechanically weed removal robot, which autonomously detects and segment the weeds from crop using artificial intelligence. The whole robot modules natively build on ROS2. Nindamani can be used in any early stage of crops for autonomous weeding.
 
   ![](demo/Nindamani-gif_1.1.gif)
